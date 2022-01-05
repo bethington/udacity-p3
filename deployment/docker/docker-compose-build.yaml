@@ -1,0 +1,22 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: ../../reverseproxy
+    image: bethington/udagram-reverseproxy 
+  backend_user:
+    build:
+      context: ../../backend-user
+    image: bethington/udagram-backend-user
+  backend_feed:
+    build:
+      context: ../../backend-feed  
+    image: bethington/udagram-backend-feed
+  frontend:
+    build:
+      context: ../../frontend  
+    image: bethington/udagram-frontend
+  postgres:
+    build:
+      context: .
+    image: postgres
